@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 interface GalleryItem {
   id: string;
@@ -9,11 +9,50 @@ interface GalleryItem {
   span?: string;
 }
 
+interface VideoTour {
+  title: string;
+  duration: string;
+  description: string;
+  poster: string;
+  src?: string;
+}
+
 export const GallerySection: React.FC = () => {
   const [filter, setFilter] = useState<string>('all');
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
-  const [videoModal, setVideoModal] = useState<{ title: string; duration: string; poster: string } | null>(null);
-  const [isPlaying, setIsPlaying] = useState<boolean>(true);
+  const [videoModal, setVideoModal] = useState<VideoTour | null>(null);
+  const closeVideoButton = useRef<HTMLButtonElement>(null);
+  const videoDialog = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!videoModal) return;
+    const previousFocus = document.activeElement as HTMLElement | null;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    closeVideoButton.current?.focus();
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setVideoModal(null);
+      if (event.key === 'Tab') {
+        const controls = videoDialog.current?.querySelectorAll<HTMLElement>('button, video[controls], a[href]');
+        if (!controls?.length) return;
+        const first = controls[0];
+        const last = controls[controls.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      }
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener('keydown', onKeyDown);
+      previousFocus?.focus();
+    };
+  }, [videoModal]);
 
   const galleryItems: GalleryItem[] = [
     {
@@ -86,23 +125,24 @@ export const GallerySection: React.FC = () => {
     (item) => filter === 'all' || item.category === filter
   );
 
-  const videoTours = [
+  const videoTours: VideoTour[] = [
     {
       title: 'Recorrido por la Terraza & Jacuzzi',
-      duration: '0:45',
+      duration: 'Video pendiente',
       description: 'Conoce el área húmeda, la cascada y la vista panorámica de la ciudad.',
       poster:
         'https://lh3.googleusercontent.com/aida-public/AB6AXuCImEp-7EwFtyiHmgfxBCqIirywFuJjaPNSPEqseTC325NV0WL0RhTpz5kPvDUnR-C8dwWhH5Bak30DFJRyQ0qV2dXRSexsxXL6-ilIlJrNQThFBMysQggyOeF-vsyIgD_6nQySohp_zedAs2VJv2VEiwHk64GCCBydkY3qWF0Ao8QtDebN6lBP2knwJ2Yl6CNVEXOIEflnU1vNVCDO9k6sHKyzT_xdfut_4XewK2OhLgwr8RcrfZhV4GE8HCOjB_X7',
     },
     {
       title: 'Nuestras Habitaciones en Detalle',
-      duration: '1:12',
-      description: 'Un vistazo a los acabados, camas confort y comodidades de cada suite.',
-      poster: '/assets/aistudio/Image_10_29383964.jpeg',
+      duration: '0:08',
+      description: 'Un recorrido real por una habitación del hotel. Video sin audio.',
+      poster: '/assets/videos/recorrido-habitacion.jpg',
+      src: '/assets/videos/recorrido-habitacion.mp4',
     },
     {
       title: 'Experiencia Gastronómica Caobos',
-      duration: '0:58',
+      duration: 'Video pendiente',
       description: 'Los sabores, tablas gourmet y bebidas refrescantes que esperan por ti.',
       poster: '/assets/aistudio/Image_12_a5d0fd0e.jpeg',
     },
@@ -204,13 +244,13 @@ export const GallerySection: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {videoTours.map((vid, i) => (
-              <div
+              <button
+                type="button"
                 key={i}
-                onClick={() => {
-                  setVideoModal(vid);
-                  setIsPlaying(true);
-                }}
-                className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 group cursor-pointer border border-[#001a39]/10"
+                disabled={!vid.src}
+                aria-label={vid.src ? `Reproducir ${vid.title}` : `${vid.title}: video pendiente`}
+                onClick={() => setVideoModal(vid)}
+                className="bg-white rounded-2xl overflow-hidden shadow-sm enabled:hover:shadow-lg transition-all duration-300 group cursor-pointer disabled:cursor-default text-left border border-[#001a39]/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#735b31]"
               >
                 <div className="relative h-48 bg-[#001a39] overflow-hidden">
                   <img
@@ -221,7 +261,9 @@ export const GallerySection: React.FC = () => {
                   />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-14 h-14 rounded-full bg-white/90 text-[#001a39] flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:bg-[#ffdeaa] transition-all">
-                      <span className="material-symbols-outlined text-3xl">play_arrow</span>
+                      <span className="material-symbols-outlined text-3xl" aria-hidden="true">
+                        {vid.src ? 'play_arrow' : 'videocam_off'}
+                      </span>
                     </div>
                   </div>
                   <span className="absolute bottom-3 right-3 bg-[#001a39]/90 backdrop-blur-md text-white text-[11px] font-sans px-2 py-0.5 rounded font-semibold">
@@ -236,7 +278,7 @@ export const GallerySection: React.FC = () => {
                     {vid.description}
                   </p>
                 </div>
-              </div>
+              </button>
             ))}
           </div>
         </div>
@@ -295,58 +337,47 @@ export const GallerySection: React.FC = () => {
         </div>
       )}
 
-      {/* Video Simulation Modal */}
+      {/* Real video player; only tours with an available file can be opened. */}
       {videoModal && (
-        <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="bg-[#001a39] rounded-2xl w-full max-w-3xl overflow-hidden shadow-2xl border border-white/20">
+        <div
+          ref={videoDialog}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="video-tour-title"
+          className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4"
+        >
+          <div className="bg-[#001a39] rounded-2xl w-full max-w-3xl max-h-[calc(100dvh-2rem)] overflow-y-auto shadow-2xl border border-white/20">
             <div className="p-4 bg-[#002f5d] flex items-center justify-between text-white">
               <div className="flex items-center gap-2">
                 <span className="material-symbols-outlined text-[#ffdeaa]">movie</span>
-                <span className="font-serif font-bold text-base">{videoModal.title}</span>
+                <span id="video-tour-title" className="font-serif font-bold text-base">{videoModal.title}</span>
               </div>
               <button
+                ref={closeVideoButton}
+                type="button"
+                aria-label="Cerrar video"
                 onClick={() => setVideoModal(null)}
-                className="text-white/70 hover:text-white"
+                className="text-white/70 hover:text-white min-h-11 min-w-11 flex items-center justify-center shrink-0 focus-visible:outline-2 focus-visible:outline-[#ffdeaa]"
               >
                 <span className="material-symbols-outlined text-xl">close</span>
               </button>
             </div>
 
-            <div className="relative aspect-video bg-black flex items-center justify-center overflow-hidden">
-              <img
-                src={videoModal.poster}
-                alt={videoModal.title}
-                className="w-full h-full object-cover opacity-80"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30"></div>
+            <video
+              key={videoModal.src}
+              src={videoModal.src}
+              poster={videoModal.poster}
+              controls
+              playsInline
+              preload="metadata"
+              aria-label={videoModal.title}
+              className="w-full max-h-[65vh] bg-black object-contain"
+            >
+              Tu navegador no puede reproducir este video.
+              <a href={videoModal.src}>Abrir el video de la habitación</a>.
+            </video>
 
-              {/* Simulated Ambient Player Overlay */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-                <button
-                  type="button"
-                  onClick={() => setIsPlaying(!isPlaying)}
-                  className="w-16 h-16 rounded-full bg-[#ffdeaa] text-[#001a39] flex items-center justify-center shadow-2xl hover:scale-110 transition-transform cursor-pointer"
-                >
-                  <span className="material-symbols-outlined text-4xl">
-                    {isPlaying ? 'pause' : 'play_arrow'}
-                  </span>
-                </button>
-                <span className="text-xs font-semibold text-white/90 mt-3 bg-black/60 px-3 py-1 rounded-full">
-                  {isPlaying ? 'Reproduciendo recorrido visual...' : 'Pausado'}
-                </span>
-              </div>
-
-              {/* Bottom Progress Bar */}
-              <div className="absolute bottom-3 left-4 right-4 flex items-center gap-3 text-xs text-white">
-                <span>0:14</span>
-                <div className="flex-1 h-1.5 bg-white/20 rounded-full overflow-hidden">
-                  <div className="h-full bg-[#ffdeaa] w-1/3 animate-pulse"></div>
-                </div>
-                <span>{videoModal.duration}</span>
-              </div>
-            </div>
-
-            <div className="p-4 bg-[#001a39] text-xs text-[#d5e3ff] flex items-center justify-between">
+            <div className="p-4 bg-[#001a39] text-xs text-[#d5e3ff] flex flex-wrap gap-3 items-center justify-between">
               <span>Hotel Ucla Center • Valledupar, Colombia</span>
               <a
                 href="https://www.instagram.com/hoteluclacenter/"

@@ -9,4 +9,6 @@ Esta carpeta conserva la página exportada de Google AI Studio y su memoria de m
 
 El código está en `hotel-ucla-center/`. El ZIP y los originales de Docs se conservan intactos, fuera de los archivos versionados. Una vista local o un commit no publican la página.
 
+Repositorio del usuario: [juancarlosfc5/hotel-ucla](https://github.com/juancarlosfc5/hotel-ucla), rama `main`. Código subido por solicitud expresa el 2026-10-28. El alojamiento web todavía no está configurado.
+
 Para mantenimiento técnico desde `hotel-ucla-center/`: `npm.cmd ci` (con lock), `npm.cmd run lint`, `npm.cmd run build` y `npm.cmd run dev`. No se necesita una clave Gemini para los componentes actuales de la landing.

@@ -1,6 +1,6 @@
 ---
 tipo: estado
-estado: listo-local
+estado: subido-a-github
 creado: 2026-10-28
 actualizado: 2026-10-28
 tags: [estado, ejecucion, pruebas]
@@ -13,7 +13,7 @@ fuentes: ["../hotel-ucla-center/package.json", "../hotel-ucla-center/vite.config
 - Único ZIP: `hotel-ucla-center---valledupar.zip`, 1.574.908 bytes, SHA-256 `85dce4b61df66c2bee1d30dc57186ce8f212290bc79bb2767a784097fd5f438a`. Original intacto; extracción en destino nuevo con validación previa de rutas, colisiones y enlaces.
 - Stack: React 19, TypeScript, Vite 8, Tailwind 4. No había lock ni node_modules. `npm` es el gestor documentado en el export.
 - Herramientas disponibles y ejecutadas: Node `v24.18.0`, npm `12.0.2`, Git `2.52.0.windows.1`. Python y FFmpeg/FFprobe disponibles para inventario y muestras locales.
-- Git inicializado en la raíz. Commit original recuperable: `239c017` (`Conservar version original de Hotel Ucla Center importada de AI Studio`); configuración/dependencias: `f194362`. Identidad Git existente reutilizada sin modificar configuración. Sin remoto configurado.
+- Git inicializado en la raíz. Commit original recuperable: `239c017` (`Conservar version original de Hotel Ucla Center importada de AI Studio`); configuración/dependencias: `f194362`; primera mejora: `637f74e`. Identidad Git existente de `juancarlosfc5` reutilizada sin modificar configuración. Remoto `origin`: `https://github.com/juancarlosfc5/hotel-ucla.git`.
 - Docs: 10 JPEG y 3 MP4; fotos revisadas visualmente, videos inspeccionados con FFprobe y muestras. El clip elegido se revisó de principio a fin y se reprodujo completo en escritorio. Catálogo en [[documentos-y-activos]], con originales, copias elegidas y pendientes.
 
 ## Ejecución local lista
@@ -48,8 +48,10 @@ Capturas locales (ignoradas por Git): `../.local/video-en-escritorio.jpg` y `../
 
 ## Publicación y alcance
 - **Vista local:** lista, revisada y abierta en el navegador; requiere el servidor local activo.
-- **GitHub/remoto:** no configurado, nada subido.
-- **Sitio público:** no comprobado. No hay autorización de despliegue, dominio/DNS ni costos.
+- **GitHub/remoto:** código subido el 2026-10-28 a https://github.com/juancarlosfc5/hotel-ucla, repositorio público del usuario, rama `main`, con seguimiento de `origin/main`. Cuenta y permiso de escritura comprobados mediante la conexión GitHub. El remoto estaba vacío antes del primer push; se conservó el historial local y no se forzó ninguna actualización.
+- **Autorización confirmada:** el usuario solicitó explícitamente `git remote add origin`, `git branch -M main` y `git push -u origin main` para ese destino. Se realizó el envío inicial y se incorpora esta actualización documental al mismo repositorio.
+- **Revisión previa al envío:** archivos versionados e historial inspeccionados, sin rutas privadas ni patrones de claves detectados; originales de Docs, ZIP, .local, dependencias y dist excluidos. Wiki revisada: contiene contexto empresarial, catálogo y decisiones, sin claves ni datos sensibles de clientes.
+- **Sitio público:** el envío a GitHub está realizado; no se ha configurado ni comprobado alojamiento web. No se activó GitHub Pages ni se cambió dominio/DNS, permisos de infraestructura o servicios de pago. La autorización de esta tarea corresponde al envío al repositorio indicado.
 - Contacto por WhatsApp: destino identificado en código; no se enviaron mensajes y recepción pendiente de prueba autorizada.
 
 ## Siguiente paso

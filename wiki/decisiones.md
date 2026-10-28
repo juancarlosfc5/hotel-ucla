@@ -24,3 +24,9 @@ fuentes: ["instrucciones del usuario, 2026-10-28", "../hotel-ucla-center---valle
 - **Confirmado, respuesta del usuario:** la primera mejora elegida es “Poner un video real de Docs en la galería”. Se seleccionó `WhatsApp Video 2026-10-28 at 3.15.40 PM.mp4`, 8,43 segundos y sin audio, revisado y copiado sin alterar el original. Fuente y relación en [[documentos-y-activos]].
 - **Implementación:** reproductor HTML de video con controles, pantalla completa ofrecida por el navegador, cierre por botón y Escape, devolución de foco y diseño adaptable. Se conservan los temas de terraza/restaurante con estado “Video pendiente”; no se presentan imágenes estáticas como reproducciones.
 - **Verificación real:** TypeScript y compilación correctos; MP4 HTTP 200; reproducción de principio a fin en escritorio y reproducción iniciada en celular de 390×844. No se enviaron mensajes ni se publicaron archivos.
+
+## 2026-10-28 · Envío autorizado a GitHub
+- **Confirmado, solicitud actual del usuario:** subir la página a su repositorio `https://github.com/juancarlosfc5/hotel-ucla.git`, rama `main`, con `origin` y seguimiento remoto. Esta autorización permite el envío de esta tarea a ese destino; no autoriza costos, DNS ni cambios en otros sitios.
+- **Confirmado mediante GitHub:** cuenta conectada `juancarlosfc5`, repositorio propio público, con permiso de escritura y sin ramas antes del envío. Los commits locales ya identificaban a `juancarlosfc5` como autor con su correo noreply existente; no se cambió identidad ni se suplantó otra cuenta.
+- **Decisión aplicada:** preservar estructura, historial y código comprobado; enviar con Git normal sin force-push. Originales, secretos, dependencias y temporales permanecen excluidos. Se revisaron archivos e historial antes de transmitirlos.
+- **Resultado observado:** `git push -u origin main` terminó correctamente y creó `origin/main`. Subir el código a GitHub no demuestra un despliegue de la web; alojamiento sigue pendiente.

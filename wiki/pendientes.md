@@ -26,6 +26,8 @@ fuentes: ["../hotel-ucla-center/src/components/", "../hotel-ucla-center/src/data
 - Antes de un remoto: revisar privacidad de wiki, referencias HTML/Markdown del export y archivos seleccionados, además de los ignorados. El primer commit es local y no constituye publicación.
 
 ## Publicación
-**Pendiente:** destino público y autorización. No se encontró evidencia de publicación actual en esta carpeta. La vista local y Git local son estados distintos del sitio público.
+**GitHub completado:** el usuario autorizó y se realizó el envío a `https://github.com/juancarlosfc5/hotel-ucla`, rama `main`, el 2026-10-28. Docs, ZIP y datos privados quedan fuera del repositorio.
+
+**Alojamiento web pendiente:** no se configuró GitHub Pages ni otro hosting. La vista local, el repositorio en GitHub y un sitio web publicado son estados distintos. Antes de un despliegue público, atender las validaciones comerciales y de contacto ya registradas y confirmar el destino de alojamiento aplicable.
 
 Véanse [[estado-del-proyecto]], [[empresa]] y [[documentos-y-activos]].

@@ -1,0 +1,6 @@
+{
+  "name": "Hotel Ucla Center - Valledupar",
+  "description": "Sitio web y motor de reservas boutique para Hotel Ucla Center en Valledupar. Habitaciones con encanto, terraza con jacuzzi, Restaurante Gourmet Caobos y experiencias de descanso.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

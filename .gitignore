@@ -1,0 +1,17 @@
+# Originales empresariales y comprimidos: conservar solo en este equipo.
+/Docs/
+/fuentes/
+*.zip
+# Memoria de trabajo y archivos privados: revisar antes de compartir.
+/.local/
+**/node_modules/
+**/dist/
+**/build/
+**/coverage/
+**/.vite/
+**/.env*
+!**/.env.example
+*.log
+*.tsbuildinfo
+.DS_Store
+Thumbs.db

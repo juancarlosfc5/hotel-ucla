@@ -1,0 +1,224 @@
+---
+name: Warm Luxury Boutique
+colors:
+  surface: '#fbf9f4'
+  surface-dim: '#dbdad5'
+  surface-bright: '#fbf9f4'
+  surface-container-lowest: '#ffffff'
+  surface-container-low: '#f5f3ee'
+  surface-container: '#f0eee9'
+  surface-container-high: '#eae8e3'
+  surface-container-highest: '#e4e2dd'
+  on-surface: '#1b1c19'
+  on-surface-variant: '#43474f'
+  inverse-surface: '#30312e'
+  inverse-on-surface: '#f2f1ec'
+  outline: '#737780'
+  outline-variant: '#c3c6d0'
+  surface-tint: '#3d5f90'
+  primary: '#001a39'
+  on-primary: '#ffffff'
+  primary-container: '#002f5d'
+  on-primary-container: '#7798cc'
+  inverse-primary: '#a6c8ff'
+  secondary: '#735b31'
+  on-secondary: '#ffffff'
+  secondary-container: '#fcdba7'
+  on-secondary-container: '#775f35'
+  tertiary: '#041a38'
+  on-tertiary: '#ffffff'
+  tertiary-container: '#1c2f4e'
+  on-tertiary-container: '#8497bb'
+  error: '#ba1a1a'
+  on-error: '#ffffff'
+  error-container: '#ffdad6'
+  on-error-container: '#93000a'
+  primary-fixed: '#d5e3ff'
+  primary-fixed-dim: '#a6c8ff'
+  on-primary-fixed: '#001c3b'
+  on-primary-fixed-variant: '#234776'
+  secondary-fixed: '#ffdeaa'
+  secondary-fixed-dim: '#e2c290'
+  on-secondary-fixed: '#271900'
+  on-secondary-fixed-variant: '#59431c'
+  tertiary-fixed: '#d6e3ff'
+  tertiary-fixed-dim: '#b4c7ed'
+  on-tertiary-fixed: '#051b39'
+  on-tertiary-fixed-variant: '#354767'
+  background: '#fbf9f4'
+  on-background: '#1b1c19'
+  surface-variant: '#e4e2dd'
+typography:
+  display-lg:
+    fontFamily: EB Garamond
+    fontSize: 3.5rem
+    fontWeight: '400'
+    lineHeight: '1.15'
+    letterSpacing: -0.02em
+  display-lg-mobile:
+    fontFamily: EB Garamond
+    fontSize: 2.5rem
+    fontWeight: '400'
+    lineHeight: '1.2'
+    letterSpacing: -0.01em
+  headline-xl:
+    fontFamily: EB Garamond
+    fontSize: 2.75rem
+    fontWeight: '500'
+    lineHeight: '1.2'
+    letterSpacing: -0.015em
+  headline-xl-mobile:
+    fontFamily: EB Garamond
+    fontSize: 2rem
+    fontWeight: '500'
+    lineHeight: '1.25'
+    letterSpacing: -0.01em
+  headline-lg:
+    fontFamily: EB Garamond
+    fontSize: 2.25rem
+    fontWeight: '500'
+    lineHeight: '1.3'
+  headline-md:
+    fontFamily: EB Garamond
+    fontSize: 1.75rem
+    fontWeight: '500'
+    lineHeight: '1.35'
+  headline-sm:
+    fontFamily: EB Garamond
+    fontSize: 1.375rem
+    fontWeight: '600'
+    lineHeight: '1.4'
+  body-lg:
+    fontFamily: Manrope
+    fontSize: 1.125rem
+    fontWeight: '400'
+    lineHeight: '1.7'
+    letterSpacing: 0.01em
+  body-md:
+    fontFamily: Manrope
+    fontSize: 1rem
+    fontWeight: '400'
+    lineHeight: '1.6'
+  body-sm:
+    fontFamily: Manrope
+    fontSize: 0.875rem
+    fontWeight: '400'
+    lineHeight: '1.5'
+  label-lg:
+    fontFamily: Manrope
+    fontSize: 0.875rem
+    fontWeight: '600'
+    lineHeight: '1.2'
+    letterSpacing: 0.08em
+  label-md:
+    fontFamily: Manrope
+    fontSize: 0.75rem
+    fontWeight: '600'
+    lineHeight: '1.2'
+    letterSpacing: 0.1em
+  label-sm:
+    fontFamily: Manrope
+    fontSize: 0.6875rem
+    fontWeight: '700'
+    lineHeight: '1.2'
+    letterSpacing: 0.12em
+rounded:
+  sm: 0.25rem
+  DEFAULT: 0.5rem
+  md: 0.75rem
+  lg: 1rem
+  xl: 1.5rem
+  full: 9999px
+spacing:
+  gutter: 1.5rem
+  gutter-mobile: 1rem
+  margin: 3rem
+  margin-mobile: 1.25rem
+  space-xs: 0.25rem
+  space-sm: 0.5rem
+  space-md: 1rem
+  space-lg: 1.5rem
+  space-xl: 2.5rem
+---
+
+## Brand & Style
+
+This design system establishes an exquisite, serene digital sanctuary tailored for luxury boutique hospitality in Valledupar, Colombia. Embodying the ethos of "Un Hotel con encanto", it merges the poise of classical European editorial typography with the grounded warmth of Colombian architectural textures—warm wood decking, lush tropical canopies, and polished ivory stone.
+
+The aesthetic philosophy centers on warm minimalism. Rather than sterile corporate blues or cold tech-forward layouts, the interface behaves like an upscale architectural portfolio. Generous open canvases of soft ivory (`#F8F6F1`) replace harsh white backgrounds, framed by deep institutional navy accents (`#002F5D`), midnight blue foundational panels (`#061C3A`), and subtle warm champagne borders (`#C3A575`).
+
+The emotional response sought is immediate calm, bespoke hospitality, and effortless sophistication. Micro-interactions are deliberate and fluid, mimicking the tranquil flow of rooftop waters and curated terrace escapes.
+
+## Colors
+
+The color palette translates the boutique architectural identity into a hierarchy of institutional confidence and hospitality warmth:
+
+- **Primary (`#002F5D`):** The institutional navy blue anchored directly in the brand heritage. Utilized for primary interactive triggers, active navigation markers, key section dividers, and authoritative badges.
+- **Secondary (`#C3A575`):** Refined champagne gold. Serves as an accent color for delicate hairline dividers, focus rings, selected states, luxury rating stars, and subtle icon highlights.
+- **Tertiary (`#061C3A`):** Deep oceanic midnight. Deployed for immersive dark-mode sections (such as luxury suite showcases, nighttime booking drawers, and full-bleed hero banners), as well as foundational contrast panels.
+- **Neutral Canvas (`#F8F6F1`):** Warm ivory. The default page canvas tone that softens optical glare, creating an inviting, tactile hospitality environment.
+- **Pure White (`#FFFFFF`):** Reserved for elevated surface cards, modal dialogue panels, and interactive input wells to ensure crisp reading layers over the warm ivory backdrop.
+- **Neutral Text (`#2F3440`):** Soft charcoal slate. Replaces harsh true black for body paragraphs, legal disclosures, and input fields to maintain comfortable contrast and eye ease.
+
+## Typography
+
+The typographic hierarchy juxtaposes classical elegance with contemporary legibility.
+
+- **Headlines (`EB Garamond`):** Instills a timeless, literary grace reflective of luxury editorial spreads. Display headlines should utilize generous line heights and tight tracking to preserve an intimate, hand-crafted aura. When presenting room categories, boutique stories, or curated culinary options, preserve standard sentence case to avoid cold corporate appearances.
+- **Body & Controls (`Manrope`):** Delivers clean geometry, pristine open counters, and high structural legibility on mobile screens. It handles all body narrative, pricing displays, feature specifications, and date pickers with understated competence.
+- **Labels & Microcopy (`Manrope Uppercase`):** Set with deliberate letter-spacing (`0.08em` to `0.12em`) and bold weights for navigation elements, category tags, amenities chips, and reservation status counters.
+
+## Layout & Spacing
+
+The layout model adopts an editorial fluid grid governed by generous outer breathing space and structural clarity.
+
+- **Grid Architecture:** Desktop views utilize a 12-column layout with 24px (`1.5rem`) gutters, allowing multi-column media narratives (such as panoramic terrace vistas alongside suite specifications). Mobile displays collapse cleanly into a single-column or 2-column stacked fluid flow with 16px (`1rem`) gutters.
+- **Section Rhythm:** Sections must avoid cramped vertical sequences. Use vertical section margins of `4rem` to `6rem` to let high-resolution photography and warm canvas spaces unhurriedly guide the eye.
+- **Card Spacing:** Room amenity listings and interactive rate selectors use consistent interior card padding (`space-lg` desktop, `space-md` mobile) with balanced element gaps (`space-sm` for linked metadata, `space-md` for description clusters).
+
+## Elevation & Depth
+
+Visual hierarchy avoids heavy skeuomorphism and stark dropshadows, leaning instead on tonal layering and luminous warm ambient diffusions:
+
+- **Surface Tiers:** The warm ivory base canvas (`#F8F6F1`) hosts elevated elements on pure white (`#FFFFFF`) or deep oceanic navy (`#061C3A`). Layering white cards on ivory yields immediate spatial distinction without reliance on dark dropshadows.
+- **Ambient Hospitality Shadows:** When physical float is required (sticky booking bars, modal dialogues, floating amenity cards), shadows use broad blur radiuses with low-opacity midnight tones tinted with primary navy:
+  - Low (Cards, Input focus): `0 4px 20px -2px rgba(0, 47, 93, 0.05)`
+  - Medium (Hovered suites, dropdown pickers): `0 12px 32px -4px rgba(0, 47, 93, 0.08)`
+  - High (Booking summary tray, image lightboxes): `0 24px 48px -8px rgba(6, 28, 58, 0.14)`
+- **Hairline Accents:** Containers are defined by featherweight borders: `1px solid rgba(195, 165, 117, 0.25)` or `1px solid rgba(0, 47, 93, 0.08)`, offering clear perimeter definition while sustaining delicate luxury.
+
+## Shapes
+
+The design system incorporates a Level 2 roundedness configuration (`0.5rem` / `8px` standard base radius), striking a deliberate harmony between architectural precision and welcoming softness:
+
+- **Standard Elements (`rounded` = 0.5rem):** Applied to primary buttons, interactive input fields, badge containers, and standard card components.
+- **Featured Panels (`rounded-lg` = 1.0rem):** Applied to full room suite cards, carousel frames, and booking engine summary panels.
+- **Modals & Hero Modules (`rounded-xl` = 1.5rem):** Applied to floating reservation drawers, image feature modules, and experiential testimonials.
+- **Circular Elements (`rounded-full`):** Reserved for icon badge accents, avatar indicators, circular media thumbnails (matching the signature circular photo framing from brand collateral), and carousel pagination indicators.
+
+## Components
+
+### Buttons
+- **Primary Action (Reservations & Inquiries):** Filled with `#002F5D`, crisp white `#FFFFFF` text, `rounded` (0.5rem), vertical padding `0.875rem`, horizontal padding `1.75rem`. Manrope uppercase label styling (`label-lg`). Hover state deepens to `#061C3A` with a soft champagne hairline border (`#C3A575`).
+- **Secondary Luxury Variant:** Outlined in champagne `#C3A575` (1.5px), transparent background, `#002F5D` text. On hover: solid `#C3A575` fill with `#FFFFFF` text and `0 8px 24px rgba(195, 165, 117, 0.25)` glow.
+- **Tertiary / Text Links:** Plain text in `#002F5D` with an animated sliding underline colored in `#C3A575`.
+
+### Chips & Badges
+- **Amenity & Category Chips:** Pill-shaped or subtle rounded tags (`rounded-full` or `rounded`), background in warm champagne tint (`rgba(195, 165, 117, 0.12)`), text in `#002F5D`, border `1px solid rgba(195, 165, 117, 0.3)`.
+- **Status Badges (Available, Suite VIP):** Pure `#FFFFFF` background floating atop imagery with midnight `#061C3A` typography and a micro dot indicator.
+
+### Cards
+- **Suite & Amenity Cards:** Pure white `#FFFFFF` base on ivory background, `rounded-lg` (1rem), featherweight border `1px solid rgba(0, 47, 93, 0.06)`, padding `space-lg`. Imagery inside cards carries subtle 12px corner rounding with an overflow clip. On hover, smooth Y-axis lift (-4px) with medium ambient shadow.
+- **Dark Inverted Cards:** Midnight blue `#061C3A` surface, ivory text `#F8F6F1`, and champagne accents `#C3A575` for luxury experiences, jacuzzi packages, or bespoke culinary offerings.
+
+### Input Fields & Selectors
+- **Date & Guest Pickers:** Height 52px, `#FFFFFF` interior surface, border `1px solid rgba(0, 47, 93, 0.16)`, text `#2F3440` in `body-md`. Focus state switches border to `#002F5D` with an outer ring in `rgba(195, 165, 117, 0.3)`. Floating labels utilize `label-md` uppercase in `#002F5D`.
+
+### Checkboxes & Radios
+- **Control Indicators:** Sized at 20px, `rounded` (4px for checkboxes, full circle for radios). Inactive: ivory fill with `#C3A575` hairline border. Active: solid `#002F5D` fill with pure white inner checkmark or concentric dot.
+
+### Lists & Amenity Grids
+- **Feature Rows:** Divided by hairline lines `1px solid rgba(195, 165, 117, 0.2)`. Iconography rendered in refined 1.5px stroke width `#002F5D` or `#C3A575`, paired with Manrope medium text.
+
+### Circular Media Vignettes
+- **Heritage Circular Frames:** Directly inspired by the property's promotional compositions, specific multi-image editorial galleries feature circular cropped windows with a 2px `#C3A575` border accentuating outdoor plunge pools, suites, and lounge spaces.
